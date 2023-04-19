@@ -1,0 +1,63 @@
+[
+    {"id": 1,
+    "question": "this is first question",
+    "answers": [
+        {
+        "answer": "option one",
+        "weight": 4
+        },
+        {
+            "answer": "option two",
+            "weight": 7
+        }
+    ]
+    },
+    {"id": 2,
+    "question": "this is second question",
+    "answers": [
+        {
+        "answer": "option one",
+        "weight": 1
+        },
+        {
+            "answer": "option three",
+            "weight": 9
+        }
+    ]},
+    {"id": 3,
+    "question": "this is third question",
+    "answers": [
+        {
+        "answer": "option one",
+        "weight": 1
+        },
+        {
+            "answer": "option four",
+            "weight": 9
+        }
+    ]},
+    {"id": 4,
+    "question": "this is third question",
+    "answers": [
+        {
+        "answer": "option one",
+        "weight": 1
+        },
+        {
+            "answer": "value 9",
+            "weight": 9
+        },
+        {
+            "answer": "value 4",
+            "weight": 4
+        },
+        {
+            "answer": "value 7",
+            "weight": 7
+        },
+        {
+            "answer": "value 2",
+            "weight": 2
+        }
+    ]}
+]
