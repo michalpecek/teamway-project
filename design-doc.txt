@@ -1,0 +1,78 @@
+Introduction
+	This document describes the solution for the following application assignment:
+
+Build a simple personality test application, that takes 3-5 different questions, maps them into a score and produces a personality trait of either Introvert or Extrovert.
+
+You can find examples of questions here: https://www.psychologies.co.uk/self/are-you-an-introvert-or-an-extrovert.html
+
+An example could be
+Landing screen
+Start personality test
+Dynamic screen, that reads question and answers from a the backend (Just build CRUD, with in memory DB)
+Finish screen, where you can see your personality trait.
+
+It is a plus if you write some unit-tests.
+
+Goals and Non Goals
+	The Goal is to build an application with following functionality:
+present a series of multiple choice questions to the user.
+Evaluate the answers and let the user know whether he/she is na an introvert or extrovert
+Backend implementation with an In memory database of questions
+
+
+	The Non Goals are:
+User interface to create, delete, or update the questions.
+
+ 
+
+Overview
+	Application will have a landing page with a simple button “Start the personality test”. After clicking on the button the user will answer a number of questions one at the time. After all questions will be answered the application will reveal the answer “Introvert/Extrovert”. Every answer will have a weight value associated with it. The value will be in range 1 - 10 (inclusive). 1 is the most introvert value and 10 is the most extrovert value. An average value of all answers will be calculated. For an average value below 5 the result of the test will be introvert. For the average value 5 and above the result of the test will be extrovert.
+Assumptions / Limitations
+The application will go through all questions in the database. 
+There will be no navigation possibility to go back to a previously answered question or skip a question.
+Next question will be presented automatically after the user clicks on one of the answers.
+Http service will serve data from the simple json file.
+Architecture
+application
+	The application will be built using Angular framework.
+The main view component will contain:
+The start test button
+personality-test component.
+
+personality-test component
+The personality-test component will be responsible for
+Retrieving the questions data from the QuestionService
+cycling through all questions
+collecting weights of the responses
+displaying the final result.
+The Personalitytest component will contain the question component. The Personalitytest component will feed the question data one at the time to the  question component and collect responses from the question component.
+
+question component
+The question component will receive one question data and will be responsible for displaying the question and all answers. When a user clicks on an answer the question component will emit an event with the weight of the chosen answer to the test component. 
+
+QuestionService service
+	The question service will be a http service serving all questions data from a json file.
+The http response will be a list of IQuestion objects
+
+IQuestion Interface
+
+
+export interface IAnswer {
+ answer:string,
+ weight: number
+}
+
+
+export interface IQuestion {
+ id: number,
+ question: string,
+ answers: IAnswer[]
+}
+
+
+  
+	
+Alternative solutions
+	Not considered.
+
+
