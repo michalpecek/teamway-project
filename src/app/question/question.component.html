@@ -1,0 +1,10 @@
+<mat-card *ngIf="question">
+    <mat-card-header class="mat-headline-6">Question: {{question.question}}</mat-card-header>
+    <mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-selection-list #answerList [multiple]="false" role="listbox" (selectionChange)="selected($event)">
+            <mat-list-option *ngFor="let answer of question.answers" [value]="answer.weight">{{answer.answer}}
+            </mat-list-option>
+        </mat-selection-list>
+    </mat-card-content>
+</mat-card>
