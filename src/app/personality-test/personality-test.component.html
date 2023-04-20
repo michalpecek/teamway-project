@@ -1,1 +1,1 @@
-<p>{{questions | json }}</p>
+<app-question [question]="currentQuestion" (answerValue)="onAnswered($event)"></app-question>

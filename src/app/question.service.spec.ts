@@ -26,12 +26,10 @@ describe('QuestionService', () => {
       expect(questions.length).toBe(4)
     })
   });
-  it('should return first question this is first question ', () => {
+
+  it('should return first question', () => {
     service.getQuestions().subscribe(questions => {
-      expect(questions[0].question).toBe('this is first question')
+      expect(questions[0].question).toBe('You’re really busy at work and a colleague is telling you their life story and personal woes. You:')
     })
   })
-
-
-
 });

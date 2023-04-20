@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'teamway-project';
+  runningTest = false;
+  result = '';
+  
+  startClicked(){
+    this.runningTest = true;
+  }
+
+  displayResult(result: string){
+    this.runningTest = false;
+    this.result = result;
+  }
 }
+
